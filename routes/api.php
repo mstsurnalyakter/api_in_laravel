@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\UsersAuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -22,3 +23,7 @@ Route::get('search-student/{studentname}',[StudentsController::class,'searchStud
 
 // resource controller
 Route::resource('members',MemberController::class);
+
+// user authentication
+Route::post('signup', [UsersAuthController::class, 'signup']);
+Route::post('login', [UsersAuthController::class, 'login']);
