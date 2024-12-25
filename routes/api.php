@@ -12,6 +12,8 @@ Route::get('/test', function(){
     return "Test route is working";
 });
 
-Route::post('/add-student', [StudentsController::class, 'addStudent']);
-Route::get('/students', [StudentsController::class, 'list']);
-Route::put('/update-student/{id}', [StudentsController::class, 'updateStudent']);
+Route::post('add-student', [StudentsController::class, 'addStudent']);
+Route::get('students', [StudentsController::class, 'list']);
+Route::put('update-student/{id}', [StudentsController::class, 'updateStudent']);
+Route::delete('delete-student/{id}',[StudentsController::class,'deleteStudent']);
+Route::get('search-student/{studentname}',[StudentsController::class,'searchStudent']);
